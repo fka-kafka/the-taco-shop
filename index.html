@@ -7,6 +7,7 @@
         <meta name="author" content="Brandon Kigen.">
         <title>The Little Taco Shop</title>
         <link rel="stylesheet" href="styles.css" type="text/css">
+        <script src="js/main.js" defer></script>
     </head>
 
     <body>
@@ -33,65 +34,60 @@
         <section class="hero">
             <h2 class="hero__h2">Bienvenidos!</h2>
             <figure>
-                <img src="img/tacos_and_drink_1000x667.png" alt="Tacos & a Drink" title="Tacos & a Drink" height="667"
+                <img id="home-image" src="img/tacos_and_drink_1000x667.png" alt="Tacos & a Drink" title="Tacos & a Drink" height="667"
                     width="1000">
                 <figcaption class="offscreen">Tacos & a Drink</figcaption>
             </figure>
         </section>
 
         <main class="main">
-            <article id="menu" class="main__article">
-                <h2>Our Menu</h2>
+            <article id="menu" class="main__article menu">
+                <h2 class="menu__h2">Our Menu</h2>
 
-                <div>
-                    <table>
-                        <caption>Our Tacos</caption>
-                        <thead>
-                            <tr>
-                                <th scope="col">Tacos</th>
-                                <th scope="col">Qty</th>
-                                <th scope="col">Price</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="rowgroup" rowspan="3">Crunchy</th>
-                                <td>1</td>
-                                <td>$1.50</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>$2.50</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>$3.25</td>
-                            </tr>
-                            <tr>
-                                <th scope="rowgroup" rowspan="3">Soft</th>
-                                <td>1</td>
-                                <td>$2</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>$3.50</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>$4.25</td>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <td colspan="3">Chips & Salsa $2</td>
-                            </tr>
-                        </tfoot>
-                    </table>
-                </div>
-                <br>
-                <div>
-                    <p><a href="#">Back to Top</a></p>
-                </div>
+                <table class="menu__container">
+                    <caption class="offscreen">Our Tacos</caption>
+                    <thead>
+                        <tr>
+                            <th class="menu__header" scope="col">Tacos</th>
+                            <th class="menu__header" scope="col">Quantity</th>
+                            <th class="menu__header" scope="col">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th class="menu__item menu__cr" scope="rowgroup" rowspan="3">Crunchy</th>
+                            <td class="menu__item">1</td>
+                            <td class="menu__item">$1.50</td>
+                        </tr>
+                        <tr>
+                            <td class="menu__item">2</td>
+                            <td class="menu__item">$2.50</td>
+                        </tr>
+                        <tr>
+                            <td class="menu__item">3</td>
+                            <td class="menu__item">$3.25</td>
+                        </tr>
+                        <tr>
+                            <th class="menu__item menu__sf" scope="rowgroup" rowspan="3">Soft</th>
+                            <td class="menu__item">1</td>
+                            <td class="menu__item">$2</td>
+                        </tr>
+                        <tr>
+                            <td class="menu__item">2</td>
+                            <td class="menu__item">$3.50</td>
+                        </tr>
+                        <tr>
+                            <td class="menu__item">3</td>
+                            <td class="menu__item">$4.25</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td class="menu__item menu__cs" colspan="3">Chips & Salsa $2</td>
+                        </tr>
+                    </tfoot>
+                </table>
+                <p class="center"><a href="#">Back to Top</a></p>
             </article>
         </main>
 
@@ -99,8 +95,7 @@
 
         <footer class="footer">
             <p>
-                <span class="nowrap">Copyright &copy;</span>
-                <span class="nowrap">Little Taco Shop.</span>
+                <span class="nowrap">Little Taco Shop®. &copy; <time id="year"></time></span>
             </p>
         </footer>
     </body>
