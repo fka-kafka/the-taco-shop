@@ -1,0 +1,25 @@
+{
+  "name": "the-taco-shop",
+  "version": "1.0.0",
+  "description": "Adding some backend to the taco shop",
+  "main": "server-static.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/the-code-papi/the-taco-shop.git"
+  },
+  "author": "the-code-papi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/the-code-papi/the-taco-shop/issues"
+  },
+  "homepage": "https://github.com/the-code-papi/the-taco-shop#readme",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1"
+  }
+}
