@@ -4,7 +4,7 @@
   "description": "Adding some backend to the taco shop",
   "main": "server-static.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch": "nodemon public/server-static.js"
   },
   "repository": {
     "type": "git",
