@@ -1,11 +1,7 @@
 const http = require("http");
 const url = require("url");
 const fs = require("fs");
-const { config } = require("dotenv");
-require("dotenv").config();
-
-const port = process.env.port;
-const host = process.env.host;
+const lookup = require("mime-types").lookup;
 
 const server = http.createServer((req, res) => {
   let parsedURL = url.parse(req.url, true);
@@ -13,10 +9,26 @@ const server = http.createServer((req, res) => {
 
   if (path == "") {
     path = "index.html";
-  };
-  console.log(`Requested path ${path}`)
+  }
+  console.log(`Requested ${path}`);
+
+  let file = __dirname + "\\" + path;
+
+  fs.readFile(file, (err, content) => {
+    if (err) {
+      console.log(`${file} File not found.`);
+      res.writeHead("Error: " + 404);
+      res.end();
+    } else {
+      console.log(`Returning ${path}`);
+
+      let mime = lookup(path);
+      res.writeHead(200, { "Content-type": mime });
+      res.end(content);
+    }
+  });
 });
 
-server.listen(port, host, () => {
-  console.log(`Listening on ${host}:${port}`);
+server.listen(4321, "localhost", () => {
+  console.log("Listening on localhost:4321");
 });
